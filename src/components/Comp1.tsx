@@ -3,10 +3,10 @@ type greet = {
     name:string,
     age?:number
 }
-const Comp1 = (props:greet) => {
+const Comp1 = ({name,age}:greet) => {
     return (
         <div>
-            Hello {props.name}
+            Hello {name}
         </div>
     )
 }
