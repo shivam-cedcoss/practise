@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count num of string</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter any string" id="string" />
+    <button onclick="getCount()">Get Count</button>
+    <div id="result"></div>
+  </body>
+  <script>
+    const getCount = () => {
+      let str = document.getElementById("string").value;
+      let a = [...str];
+      let b = a;
+      let temp = [];
+      let strTemp="";
+      let count = 1;
+      for (let i = 0; i <= b.length - 1; i++) {
+        if (b[i] === b[i + 1]) {
+          count = count + 1;
+        } else {
+          let x = b[i];
+          // temp.push({ [x]: count });
+          temp.push(x,count)
+          var aaa=strTemp.concat(b[i],count)
+          document.getElementById("result").append(aaa," ")
+          count = 1;
+        }
+      }
+      // console.log(strTemp);
+    };
+  </script>
+</html>
