@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Call, Apply , Bind Method</title>
+  </head>
+  <script>
+    //<----------------- call method -------->
+    
+    // Call method is used for function borrowing
+    let name = {
+      firstName: "Akash",
+      lastName: "Soni",
+    };
+    let printfullname = function (hometown, state) {
+      console.log(
+        this.firstName + " " + this.lastName + " " + hometown + " " + state
+      );
+    };
+    printfullname.call(name, "Meerut", "Uttar Pradesh");
+
+    let name2 = {
+      firstName: "Sumit",
+      lastName: "Gangwar",
+    };
+    // First argument in call method is reference to the this variable,
+    // In Call method argument are passed individually
+    printfullname.call(name2, "Lucknow", "Uttar Pradesh");
+
+    //<----------- Apply method ----------->
+    // Apply method is also same as call method but it only accept two parameters one is reference to this variable
+    // Second argument passed is a array list
+    let name3 = {
+      firstName: "Yash",
+      lastName: "Gupta",
+    };
+    printfullname.apply(name3, ["Kanpur", "Uttar Pradesh"]);
+
+    // <---------- Bind Method ---------->
+
+    //  Used to keep a copy of a method and can use it later
+    // We can not directly call a method directly like call and apply
+    // Bind method returns a function
+
+    let name4 = {
+      firstName: "Kushal",
+      lastName: "Tiwari",
+    };
+    let getName = printfullname.bind(name4, "Lucknow", "Uttar pradesh");
+    getName();
+  </script>
+</html>
